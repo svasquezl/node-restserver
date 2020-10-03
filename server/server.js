@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 
 app.use(require('./routes/usuario'));
 
-mongoose.connect('mongodb+srv://admin:L7nraIk3furUkdp6@cluster0.wawjm.mongodb.net/cafe', {
+mongoose.connect(urlDB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
@@ -23,15 +23,10 @@ mongoose.connect('mongodb+srv://admin:L7nraIk3furUkdp6@cluster0.wawjm.mongodb.ne
 }, (err, res) => {
     if (err) throw err;
 
-    console.log('Base de datos online');
+    console.log('Base de datos online')
 
 });
 
 app.listen(process.env.PORT, () => {
-    console.log(`Escucnado puerto ${process.env.PORT}`);
+    console.log(`Escucnado puerto ${process.env.PORT}`)
 })
-
-//usermongo atlas
-// user: admin
-//pass: L7nraIk3furUkdp6
-// mongodb+srv://admin:L7nraIk3furUkdp6@cluster0.wawjm.mongodb.net/cafe
